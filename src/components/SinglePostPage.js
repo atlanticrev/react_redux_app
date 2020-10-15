@@ -3,7 +3,8 @@ import { useSelector } from "react-redux";
 
 import { Post } from './Post';
 
-export const SinglePostPage = ({ match }) => {
+export const SinglePostPage = (props) => {
+    const { match } = props;
     const { postId } = match.params;
 
     const post = useSelector(state => state.posts.find(post => post.id === postId));
